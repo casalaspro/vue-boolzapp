@@ -42,11 +42,11 @@
           </div>
 
           <ul class="contact-cards">
-            <li>
+            <li v-for="contact in contacts">
               <div class="toast">
-                <img class="card-img" src="./img/avatar_1.jpg" alt="">
+                <img class="card-img" :src="contact.avatar" alt="">
                 <div class="card-text">
-                  <h3 class="card-name">Michele</h3>
+                  <h3 class="card-name">{{contact.name}}</h3>
                   <p class="card-status">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="card-time">16:15</div>
@@ -177,7 +177,7 @@
     </div>
   </div>
   
-
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="./js/app.js"></script>
 </body>
 </html>
