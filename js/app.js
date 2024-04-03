@@ -144,6 +144,11 @@ createApp({
         return "other"
       }
     }
+    // addMessage(){
+    //   const time = Date.now();
+    //   const date = new Date(time);
+
+    // }
   },
   
 }).mount('#app');
