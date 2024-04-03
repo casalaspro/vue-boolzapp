@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
   data: function(){
     return{
-
+      activeElement: 0,
       contacts: [{
         name: 'Michele',
         avatar: './img/avatar_1.jpg',
@@ -41,9 +41,9 @@ createApp({
         },],},
       {
         name: 'Samuele',
-         avatar: './img/avatar_3.jpg',
-         visible: true,
-         messages: [{ 
+        avatar: './img/avatar_3.jpg',
+        visible: true,
+        messages: [{ 
           date: '28/03/2020 10:10:40',
           message: 'La Marianna va in campagna',
           status: 'received'
@@ -134,7 +134,16 @@ createApp({
   },
 
   methods: {
-    
+    changeActiveElement(i){
+      this.activeElement = i
+    },
+    directionMessage(element){
+      if(element.status === 'sent'){
+        return "mine"
+      }else{
+        return "other"
+      }
+    }
   },
   
 }).mount('#app');

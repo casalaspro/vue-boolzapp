@@ -42,7 +42,10 @@
           </div>
 
           <ul class="contact-cards">
-            <li v-for="contact in contacts">
+            <li
+            v-for="(contact, i) in contacts"
+            @click="changeActiveElement(i)"
+            >
               <div class="toast">
                 <img class="card-img" :src="contact.avatar" alt="">
                 <div class="card-text">
@@ -135,6 +138,7 @@
               <div class="card-text">
                 <h3 class="card-name">Davide</h3>
                 <p class="card-status">Lorem ipsum dolor sit amet</p>
+                <p>{{this.activeElement}}</p>
               </div>
               <div class="head__icons">
                 <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
@@ -145,13 +149,13 @@
 
           </div>
 
-          <div class="mess-content flex">
-            <div class="message mine flex">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores velit, in sapiente eum maxime laborum cupiditate! Incidunt, minima natus quis veniam ducimus porro non asperiores reprehenderit quas eos architecto quasi libero, saepe quod facere commodi fugit?</p>
+          <div v-for="message in contacts[activeElement].messages" class="mess-content flex">
+            <div :class="directionMessage(message)" class="message flex">
+              <p>{{message.message}}</p>
               <i class="fa-solid fa-chevron-down"></i>
               <span class="message-time">15:18</span>
             </div>
-            <div class="message mine flex">
+            <!-- <div class="message mine flex">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
               <i class="fa-solid fa-chevron-down"></i>
             </div>
@@ -162,7 +166,7 @@
             <div class="message other flex">
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur dolores a libero nulla iusto, inventore reprehenderit sapiente quia voluptatum eligendi corrupti, laboriosam aspernatur impedit nobis ipsum expedita. Ad fugit debitis nesciunt earum assumenda illo exercitationem incidunt!</p>
               <i class="fa-solid fa-chevron-down"></i>
-            </div>
+            </div> -->
           </div>
 
           <div class="mess-text-bar flex">
