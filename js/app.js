@@ -5,6 +5,7 @@ createApp({
   data: function(){
     return{
       activeElement: 0,
+      messageInserted: "",
       contacts: [{
         name: 'Michele',
         avatar: './img/avatar_1.jpg',
@@ -149,6 +150,14 @@ createApp({
       const dt = DateTime.now();
       const stringDateTime = `${dt.day}/${dt.month}/${dt.year} ${dt.hour}:${dt.minute}:${dt.second}`;
       return stringDateTime;
+    },
+    addMessage(){
+      const message = {
+        date: this.addDateTime,
+        message: this.messageInserted,
+        status: 'sent',
+        };
+      this.contacts[this.activeElement].messages.push(message);
     }
   },
   

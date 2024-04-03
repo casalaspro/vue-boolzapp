@@ -156,6 +156,7 @@
               <span class="message-time">15:18</span>
             </div>
             <p>{{addDateTime()}}</p>
+            <p>{{messageInserted}}</p>
 
             <!-- <div class="message mine flex">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -173,7 +174,10 @@
 
           <div class="mess-text-bar flex">
             <i class="fa-regular fa-smile"></i>
-            <input type="text" name="message" id="message" placeholder="Scrivi un messaggio">
+            <input
+            @keyup.enter="addMessage"
+            v-model.trim="messageInserted"
+            type="text" name="message" id="message" placeholder="Scrivi un messaggio">
             <i class="fa solid fa-microphone"></i>
           </div>
 
