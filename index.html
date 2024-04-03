@@ -138,7 +138,7 @@
               <div class="card-text">
                 <h3 class="card-name">Davide</h3>
                 <p class="card-status">Lorem ipsum dolor sit amet</p>
-                <p>{{this.activeElement}}</p>
+                <p></p>
               </div>
               <div class="head__icons">
                 <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
@@ -149,8 +149,8 @@
 
           </div>
 
-          <div v-for="message in contacts[activeElement].messages" class="mess-content flex">
-            <div :class="directionMessage(message)" class="message flex">
+          <div  class="mess-content flex">
+            <div v-for="message in contacts[activeElement].messages" :class="directionMessage(message)" class="message flex">
               <p>{{message.message}}</p>
               <i class="fa-solid fa-chevron-down"></i>
               <span class="message-time">15:18</span>
