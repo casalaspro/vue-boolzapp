@@ -152,11 +152,11 @@
           <div  class="mess-content flex">
             <div v-for="message in contacts[activeElement].messages" :class="directionMessage(message)" class="message flex">
               <p>{{message.message}}</p>
-              <i class="fa-solid fa-chevron-down"></i>
+              <i class="message-menu fa-solid fa-chevron-down"></i>
               <span class="message-time">15:18</span>
             </div>
-            <p>{{addDateTime()}}</p>
-            <p>{{messageInserted}}</p>
+            <!-- <p>{{addDateTime()}}</p>
+            <p>{{messageInserted}}</p> -->
 
             <!-- <div class="message mine flex">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
