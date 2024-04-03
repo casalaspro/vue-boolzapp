@@ -33,51 +33,6 @@ input{
   --message-bg: #DEF8C0;
 }
 
-
-
-/* DEBUG */
-
-/* .debug .container{
-  border: solid 4px greenyellow;
-}
-
-.debug #app{
-  border: solid 4px coral;
-}
-
-.debug .navigator{
-  background-color: aqua;
-} */
-
-.debug .messages{
-  background-color: rgb(255, 221, 0);
-}
-
-/* .debug .navigator .notifications{
-  height: 80px;
-} */
-
-/* .debug .navigator .nav-search{
-  height: 50px;
-  background-color: lightgray;
-}
-
-.debug .navigator .contact-cards li{
-  height: 80px;
-  background-color: cadetblue;
-  border: 1px solid black;
-}
-
-.messages .mess-head{
-  background-color: #EAEAEA;  
-}
-
-.messages .mess-content{
-  background-color: #E3DED6;
-} */
-
-
-
 /*-------- LAYOUT --------*/
 
 body{
@@ -233,10 +188,6 @@ body{
   display: none;
 }
 
-/* .messages{
-  overflow: hidden;
-} */
-
 /* MESS-HEAD */
 
 .mess-head .toast .card-img{
@@ -253,7 +204,7 @@ body{
 /* MESS-CONTENT */
 
 .mess-content{
-  background-image: url(./img/mine.jpg);
+  background-image: url(../img/mine.jpg);
   flex-direction: column;
   padding: 30px 25px;
 }
