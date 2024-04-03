@@ -1,4 +1,5 @@
 const { createApp } = Vue;
+const { DateTime } = luxon;
 
 createApp({
   data: function(){
@@ -143,12 +144,13 @@ createApp({
       }else{
         return "other"
       }
-    }
-    // addMessage(){
-    //   const time = Date.now();
-    //   const date = new Date(time);
+    },
+    addDateTime(){
+      const dt = DateTime.now();
+      const time = dt.hour;
+      return time;
 
-    // }
+    }
   },
   
 }).mount('#app');
