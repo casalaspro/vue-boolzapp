@@ -147,9 +147,8 @@ createApp({
     },
     addDateTime(){
       const dt = DateTime.now();
-      const time = dt.hour;
-      return time;
-
+      const stringDateTime = `${dt.day}/${dt.month}/${dt.year} ${dt.hour}:${dt.minute}:${dt.second}`;
+      return stringDateTime;
     }
   },
   
