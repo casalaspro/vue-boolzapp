@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/04b1244ecb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/app.css">
+  <title>Boolzapp</title>
+</head>
+<body class="debug">
+
+  <div class="container">
+    <div id="app" class="flex">
+     
+        <!-- navigator -->
+        <aside class="navigator">
+          <div class="nav-head flex">
+            <img class="card-img" src="./img/avatar_io.jpg" alt="">
+            <div class="head__icons">
+              <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+              <a href="#"><i class="fa-solid fa-message"></i></a>
+              <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+            </div>
+            <!-- profile -->
+          </div>
+          <div class="notifications">
+            <div class="notifications__icon">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <div class="notifications__info">
+              <h3 class="notifications__title">Ricevi notifiche di nuovi messaggi</h3>
+              <p class="notifications__subtitle">Attiva notifiche desktop</p>
+            </div>
+
+          </div>
+          <div class="nav-search">
+            <input type="text" name="search" id="search" placeholder="Cerca o inizia una nuova chat">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <ul class="contact-cards">
+            <li>
+              <div class="toast">
+                <img class="card-img" src="./img/avatar_1.jpg" alt="">
+                <div class="card-text">
+                  <h3 class="card-name">Michele</h3>
+                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-time">16:15</div>
+              </div>
+            </li>
+            <li>
+              <div class="toast">
+                <img class="card-img" src="./img/avatar_2.jpg" alt="">
+                <div class="card-text">
+                  <h3 class="card-name">Fabio</h3>
+                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-time">16:15</div>
+              </div>
+            </li>
+            <li>
+              <div class="toast">
+                <img class="card-img" src="./img/avatar_3.jpg" alt="">
+                <div class="card-text">
+                  <h3 class="card-name">Samuele</h3>
+                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-time">16:15</div>
+              </div>
+            </li>
+            <li>
+              <div class="toast">
+                <img class="card-img" src="./img/avatar_4.jpg" alt="">
+                <div class="card-text">
+                  <h3 class="card-name">Alessandro B.</h3>
+                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-time">16:15</div>
+              </div>
+            </li>
+            <li>
+              <div class="toast">
+                <img class="card-img" src="./img/avatar_5.jpg" alt="">
+                <div class="card-text">
+                  <h3 class="card-name">Alessandro L.</h3>
+                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-time">16:15</div>
+              </div>
+            </li>
+            <li>
+              <div class="toast">
+                <img class="card-img" src="./img/avatar_6.jpg" alt="">
+                <div class="card-text">
+                  <h3 class="card-name">Claudia</h3>
+                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-time">16:15</div>
+              </div>
+            </li>
+            <li>
+              <div class="toast">
+                <img class="card-img" src="./img/avatar_7.jpg" alt="">
+                <div class="card-text">
+                  <h3 class="card-name">Federico</h3>
+                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-time">16:15</div>
+              </div>
+            </li>
+            <li>
+              <div class="toast">
+                <img class="card-img" src="./img/avatar_8.jpg" alt="">
+                <div class="card-text">
+                  <h3 class="card-name">Davide</h3>
+                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-time">16:15</div>
+              </div>
+            </li>
+          </ul>
+
+        </aside>
+
+        <!-- messages -->
+        <main class="messages flex">
+
+          <div class="mess-head">
+            <div class="toast">
+              <img class="card-img" src="./img/avatar_8.jpg" alt="">
+              <div class="card-text">
+                <h3 class="card-name">Davide</h3>
+                <p class="card-status">Lorem ipsum dolor sit amet</p>
+              </div>
+              <div class="head__icons">
+                <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                <a href="#"><i class="fa-solid fa-message"></i></a>
+                <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mess-content flex">
+            <div class="message mine flex">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores velit, in sapiente eum maxime laborum cupiditate! Incidunt, minima natus quis veniam ducimus porro non asperiores reprehenderit quas eos architecto quasi libero, saepe quod facere commodi fugit?</p>
+              <i class="fa-solid fa-chevron-down"></i>
+              <span class="message-time">15:18</span>
+            </div>
+            <div class="message mine flex">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="message mine flex">
+              <p>Lorem ipsum</p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="message other flex">
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur dolores a libero nulla iusto, inventore reprehenderit sapiente quia voluptatum eligendi corrupti, laboriosam aspernatur impedit nobis ipsum expedita. Ad fugit debitis nesciunt earum assumenda illo exercitationem incidunt!</p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="mess-text-bar flex">
+            <i class="fa-regular fa-smile"></i>
+            <input type="text" name="message" id="message" placeholder="Scrivi un messaggio">
+            <i class="fa solid fa-microphone"></i>
+          </div>
+
+        </main>
+
+     
+    </div>
+  </div>
+  
+</body>
+</html>
