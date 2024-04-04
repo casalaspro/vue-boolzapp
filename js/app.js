@@ -157,8 +157,21 @@ createApp({
         message: this.messageInserted,
         status: 'sent',
         };
-      this.contacts[this.activeElement].messages.push(message);
+      currentContact.messages.push(message);
     }
+  },
+
+  computed: {
+    currentContact() {
+      return this.contacts[this.activeElement];
+    }
+  },
+
+  mounted() {
+    console.log("the component is now mounted.");
+    setTimeout(()=>{
+      console.log("Sono passati 5 secondi")
+    }, 5000);
   },
   
 }).mount('#app');
