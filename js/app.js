@@ -5,6 +5,7 @@ createApp({
   data: function(){
     return{
       activeElement: 0,
+      messageSentIndex: 0,
       messageInserted: "",
       contacts: [{
         name: 'Michele',
@@ -135,6 +136,13 @@ createApp({
     }
   },
 
+  computed: {
+    currentContact() {
+      return this.contacts[this.activeElement];
+    },
+
+  },
+
   methods: {
     changeActiveElement(i){
       this.activeElement = i
@@ -152,20 +160,30 @@ createApp({
       return stringDateTime;
     },
     addMessage(){
-      const message = {
-        date: this.addDateTime,
+      const messageSent = {
+        date: this.addDateTime(),
         message: this.messageInserted,
         status: 'sent',
         };
-      currentContact.messages.push(message);
+
+      this.messageSentIndex = this.activeElement;
+
+      
+      // this.currentContact.messages.push(messageSent);
+      this.contacts[this.messageSentIndex].messages.push(messageSent);
+      this.messageInserted = "";
+      setTimeout(()=>{
+        const messageReceived = {
+          date: this.addDateTime(),
+          message: "Ok!",
+          status: 'received',
+        }
+        // currentContact.messages.push(messageReceived);
+        this.contacts[this.messageSentIndex].messages.push(messageReceived)
+      }, 5000);
     }
   },
 
-  computed: {
-    currentContact() {
-      return this.contacts[this.activeElement];
-    }
-  },
 
   mounted() {
     console.log("the component is now mounted.");
