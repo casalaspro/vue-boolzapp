@@ -6,7 +6,9 @@ createApp({
     return{
       activeElement: 0,
       messageSentIndex: 0,
+      indexResultedBySearch: [],
       messageInserted: "",
+      searchStringInserted: "",
       contacts: [{
         name: 'Michele',
         avatar: './img/avatar_1.jpg',
@@ -159,6 +161,13 @@ createApp({
       const stringDateTime = `${dt.day}/${dt.month}/${dt.year} ${dt.hour}:${dt.minute}:${dt.second}`;
       return stringDateTime;
     },
+
+    addTime(){
+      const dt = DateTime.now();
+      const stringTime = `${dt.hour}:${dt.minute}`;
+      return stringTime;
+    },
+
     addMessage(){
       const messageSent = {
         date: this.addDateTime(),
@@ -181,7 +190,26 @@ createApp({
         // currentContact.messages.push(messageReceived);
         this.contacts[this.messageSentIndex].messages.push(messageReceived)
       }, 5000);
+    },
+
+    searchString(){
+      let string = this.searchStringInserted;
+      this.contacts.forEach((element, index) => {
+        if(element.name.includes(string)){
+          console.log(`${element.name} contiene la stringa "${string}".`);
+          this.indexResultedBySearch.push(index);
+          console.log(this.indexResultedBySearch);
+        }
+        this.searchStringInserted = "";
+      });
+    },
+
+    filterArray(string){
+      const result = this.contacts.filter((contact)=>contact.name === string);
+      return result;
     }
+
+
   },
 
 
@@ -190,6 +218,12 @@ createApp({
     setTimeout(()=>{
       console.log("Sono passati 5 secondi")
     }, 5000);
+    console.log(this.filterArray("Federico"));
+
+    console.log("L'ora inserita è: " + this.contacts[0].messages[ this.contacts[0].messages.length -1].date.slice(11, 16));
+
+    // this.searchString("a");
+    
   },
   
 }).mount('#app');

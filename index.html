@@ -37,7 +37,10 @@
 
           </div>
           <div class="nav-search">
-            <input type="text" name="search" id="search" placeholder="Cerca o inizia una nuova chat">
+            <input
+            v-model.trim="searchStringInserted"
+            @keyup.enter="searchString"
+            type="text" name="search" id="search" placeholder="Cerca o inizia una nuova chat">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
 
