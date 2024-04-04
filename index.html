@@ -42,7 +42,8 @@
             v-on:input="searchString"
             @click="allInvisible"
             type="text" name="search" id="search" placeholder="Cerca o inizia una nuova chat">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass search-lens"></i>
+            <i :class="{d_none : xMarkVisibility === false}" @click="allVisible" class="fa-solid fa-xmark search-cross"></i>
           </div>
 
           <ul class="contact-cards">

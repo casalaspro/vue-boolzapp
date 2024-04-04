@@ -9,6 +9,7 @@ createApp({
       indexResultedBySearch: [],
       messageInserted: "",
       searchStringInserted: "",
+      xMarkVisibility: false,
       inputReset: false,
       contacts: [{
         name: 'Michele',
@@ -199,6 +200,15 @@ createApp({
       this.contacts.forEach((element, index) => {
         element.visible = false;
       });
+      this.xMarkVisibility = true
+    },
+
+    allVisible(){
+      this.contacts.forEach((element, index) => {
+        element.visible = true;
+      });
+      this.xMarkVisibility = false;
+      this.searchStringInserted = "";
     },
 
     searchString(){

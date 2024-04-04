@@ -152,7 +152,7 @@ body{
     outline: none;
   }
 
-  .nav-search i{
+  .nav-search .search-lens{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -160,6 +160,22 @@ body{
     color: #B7B9BB;
     pointer-events: none;
   }
+
+  .nav-search .search-cross{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    color: #B7B9BB;
+    cursor: pointer;
+  }
+
+  .nav-search .search-cross.d_none{
+    display: none;
+  }
+
+  
+
 
 
 
