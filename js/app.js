@@ -195,17 +195,30 @@ createApp({
       }, 5000);
     },
 
+    allInvisible(){
+      this.contacts.forEach((element, index) => {
+        element.visible = false;
+      });
+    },
+
     searchString(){
       let string = this.searchStringInserted;
-      this.contacts.forEach((element, index) => {
+      if(string !== ""){
+        
+        this.contacts.forEach((element, index) => {
         if(element.name.includes(string)){
-          console.log(`${element.name} contiene la stringa "${string}".`);
+          // console.log(`${element.name} contiene la stringa "${string}".`);
           // this.indexResultedBySearch.push(index);
-          element.visible = false;
-          console.log(this.indexResultedBySearch);
+          element.visible = true;
+          // console.log(this.indexResultedBySearch);
         }
         // this.searchStringInserted = "";
       });
+      }else{
+        this.contacts.forEach((element) => {
+          element.visible = true;
+        })
+      }
     },
 
     filterArray(string){
