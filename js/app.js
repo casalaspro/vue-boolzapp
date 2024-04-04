@@ -9,6 +9,7 @@ createApp({
       indexResultedBySearch: [],
       messageInserted: "",
       searchStringInserted: "",
+      inputReset: false,
       contacts: [{
         name: 'Michele',
         avatar: './img/avatar_1.jpg',
@@ -143,6 +144,8 @@ createApp({
       return this.contacts[this.activeElement];
     },
 
+
+
   },
 
   methods: {
@@ -197,10 +200,11 @@ createApp({
       this.contacts.forEach((element, index) => {
         if(element.name.includes(string)){
           console.log(`${element.name} contiene la stringa "${string}".`);
-          this.indexResultedBySearch.push(index);
+          // this.indexResultedBySearch.push(index);
+          element.visible = false;
           console.log(this.indexResultedBySearch);
         }
-        this.searchStringInserted = "";
+        // this.searchStringInserted = "";
       });
     },
 

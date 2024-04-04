@@ -39,7 +39,8 @@
           <div class="nav-search">
             <input
             v-model.trim="searchStringInserted"
-            @keyup.enter="searchString"
+            v-on:input="searchString"
+            @click=""
             type="text" name="search" id="search" placeholder="Cerca o inizia una nuova chat">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
@@ -49,7 +50,7 @@
             v-for="(contact, i) in contacts"
             @click="changeActiveElement(i)"
             >
-              <div class="toast">
+              <div :class="{d_none : contact.visible !== true}" class="toast">
                 <img class="card-img" :src="contact.avatar" alt="">
                 <div class="card-text">
                   <h3 class="card-name">{{contact.name}}</h3>
