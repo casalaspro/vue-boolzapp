@@ -170,7 +170,11 @@ createApp({
     },
     addDateTime(){
       const dt = DateTime.now();
-      const stringDateTime = `${dt.day}/${dt.month}/${dt.year} ${dt.hour}:${dt.minute}:${dt.second}`;
+      const hour = dt.toFormat('TT');
+      const day = dt.toFormat('dd');
+      const month =  dt.toFormat('LL');
+      const year = dt.toFormat('y');
+      const stringDateTime = `${day}/${month}/${year} ${hour}`;
       return stringDateTime;
     },
 
@@ -186,6 +190,8 @@ createApp({
         message: this.messageInserted,
         status: 'sent',
         };
+
+      console.log(messageSent.date)
 
       this.messageSentIndex = this.activeElement;
 

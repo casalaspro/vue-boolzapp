@@ -46,7 +46,7 @@
             <i :class="{d_none : xMarkVisibility === false}" @click="allVisible" class="fa-solid fa-xmark search-cross"></i>
           </div>
 
-          <!-- v-on:input="searchString" -->
+          <!-- CONTACT CARDS -->
 
           <ul class="contact-cards">
             <li
@@ -58,9 +58,9 @@
                 <img class="card-img" :src="contact.avatar" alt="">
                 <div class="card-text">
                   <h3 class="card-name">{{contact.name}}</h3>
-                  <p class="card-status">Lorem ipsum dolor sit amet</p>
+                  <p class="card-status">{{contact.messages[contact.messages.length - 1].message}}</p>
                 </div>
-                <div class="card-time">16:15</div>
+                <div class="card-time">{{contact.messages[contact.messages.length - 1].date.slice(11,16)}}</div>
               </div>
             </li>
             <!-- <li>
@@ -161,7 +161,7 @@
             <div v-for="(message, i) in contacts[activeElement].messages" :class="directionMessage(message)" class="message flex">
               <p>{{message.message}}</p>
               <i @click="openModal(i)" class="message-menu fa-solid fa-chevron-down"></i>
-              <span class="message-time">15:18</span>
+              <span class="message-time">{{message.date.slice(11,16)}}</span>
               <ul :class="{active : i === selectedMessage.index && selectedMessage.selection === true }" class="message_modal">
                 <li>Message info</li>
                 <li>Delete message</li>
