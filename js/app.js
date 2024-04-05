@@ -237,6 +237,10 @@ createApp({
     filterArray(string){
       const result = this.contacts.filter((contact)=>contact.name === string);
       return result;
+    },
+
+    youClicked(){
+      console.log("You clicked");
     }
 
 
