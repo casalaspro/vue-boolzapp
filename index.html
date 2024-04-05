@@ -158,16 +158,22 @@
           </div>
 
           <div  class="mess-content flex">
-            <div v-for="(message, i) in contacts[activeElement].messages" :class="directionMessage(message)" class="message flex">
+            <div 
+            v-for="(message, i, array) in contacts[activeElement].messages"
+            v-for="messageD in messageDeleted"
+            :class="directionMessage(message)"
+            :class="d_none : messageD.visible === false && activeElement === messageD.contactIndex"
+            class="message flex">
               <p>{{message.message}}</p>
               <i @click="openModal(i)" class="message-menu fa-solid fa-chevron-down"></i>
               <span class="message-time">{{message.date.slice(11,16)}}</span>
               <ul :class="{active : i === selectedMessage.index && selectedMessage.selection === true }" class="message_modal">
                 <li>Message info</li>
-                <li>Delete message</li>
+                <li @click="deleteMessage(i)">Delete message</li>
                 <li @click="closeModal()" class="close_modal"><i class="fa-solid fa-xmark"></i></li>
               </ul>
             </div>
+            <!-- @click="deleteMessage(message)" -->
             <!-- <p>{{addDateTime()}}</p>
             <p>{{messageInserted}}</p> -->
 

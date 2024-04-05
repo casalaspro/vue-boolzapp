@@ -9,6 +9,13 @@ createApp({
         index: 0,
         selection: false,
       },
+      messageDeleted: [
+        {
+          contactIndex: 0,
+          messageIndex: 0,
+          visible: true
+        }
+      ],
       messageSentIndex: 0,
       indexResultedBySearch: [],
       messageInserted: "",
@@ -149,18 +156,29 @@ createApp({
       return this.contacts[this.activeElement];
     },
 
-    selectionMessageModal(i){
-      
-    }
-
 
 
   },
 
   methods: {
+
+    deleteMessage(i){
+      const messageId =
+      {
+        contactIndex: this.activeElement,
+        messageIndex: i,
+        visible: false
+      }
+
+      this.messageDeleted.push(messageId);
+      console.log("Hai eliminato il messaggio");
+
+    },
+
     changeActiveElement(i){
       this.activeElement = i
     },
+
     directionMessage(element){
       if(element.status === 'sent'){
         return "mine"
@@ -168,6 +186,7 @@ createApp({
         return "other"
       }
     },
+
     addDateTime(){
       const dt = DateTime.now();
       const hour = dt.toFormat('TT');
@@ -263,6 +282,8 @@ createApp({
     closeModal(){
       this.selectedMessage.selection = false;
     }
+
+
 
 
   },
