@@ -377,6 +377,11 @@ ul.message_modal.active{
   display: block;
 }
 
+ul.message_modal li.close_modal {
+  position: absolute;
+  right: 6px;
+  top: 3px;
+}
 
 /* UTILITIES */
 

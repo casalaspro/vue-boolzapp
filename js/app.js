@@ -252,6 +252,10 @@ createApp({
       this.selectedMessage.index = selected;
       this.selectedMessage.selection = true;
       console.log("You clicked the message n° " + this.selectedMessage.index + " and it is " + this.selectedMessage.selection);
+    },
+
+    closeModal(){
+      this.selectedMessage.selection = false;
     }
 
 
