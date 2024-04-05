@@ -5,6 +5,10 @@ createApp({
   data: function(){
     return{
       activeElement: 0,
+      selectedMessage: {
+        index: 0,
+        selection: false,
+      },
       messageSentIndex: 0,
       indexResultedBySearch: [],
       messageInserted: "",
@@ -145,6 +149,10 @@ createApp({
       return this.contacts[this.activeElement];
     },
 
+    selectionMessageModal(i){
+      
+    }
+
 
 
   },
@@ -239,8 +247,11 @@ createApp({
       return result;
     },
 
-    youClicked(){
-      console.log("You clicked");
+    openModal(i){
+      let selected = i
+      this.selectedMessage.index = selected;
+      this.selectedMessage.selection = true;
+      console.log("You clicked the message n° " + this.selectedMessage.index + " and it is " + this.selectedMessage.selection);
     }
 
 
