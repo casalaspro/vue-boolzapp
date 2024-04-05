@@ -40,18 +40,21 @@
             <input
             v-model.trim="searchStringInserted"
             v-on:input="searchString"
-            @click="allInvisible"
+            
             type="text" name="search" id="search" placeholder="Cerca o inizia una nuova chat">
             <i class="fa-solid fa-magnifying-glass search-lens"></i>
             <i :class="{d_none : xMarkVisibility === false}" @click="allVisible" class="fa-solid fa-xmark search-cross"></i>
           </div>
 
+          <!-- v-on:input="searchString" -->
+
           <ul class="contact-cards">
             <li
             v-for="(contact, i) in contacts"
             @click="changeActiveElement(i)"
+            :class="{d_none : contact.visible !== true}"
             >
-              <div :class="{d_none : contact.visible !== true}" class="toast">
+              <div class="toast">
                 <img class="card-img" :src="contact.avatar" alt="">
                 <div class="card-text">
                   <h3 class="card-name">{{contact.name}}</h3>

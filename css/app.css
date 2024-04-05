@@ -33,7 +33,7 @@ input{
   --message-bg: #DEF8C0;
 }
 
-.contact-cards li .toast.d_none{
+.contact-cards li.d_none{
   display: none;
 }
 

@@ -212,23 +212,26 @@ createApp({
     },
 
     searchString(){
+      // console.log("ricerca stringa avviata");
+      console.log("Research started");
       let string = this.searchStringInserted;
-      if(string !== ""){
+      
         
         this.contacts.forEach((element, index) => {
         if(element.name.includes(string)){
+          console.log(`ELEMENT: ${element.name} included`)
           // console.log(`${element.name} contiene la stringa "${string}".`);
           // this.indexResultedBySearch.push(index);
           element.visible = true;
           // console.log(this.indexResultedBySearch);
+        }else{
+          console.log(`ELEMENT: ${element.name} NOT included`);
+          element.visible = false;
         }
         // this.searchStringInserted = "";
       });
-      }else{
-        this.contacts.forEach((element) => {
-          element.visible = true;
-        })
-      }
+      
+   
     },
 
     filterArray(string){
@@ -239,17 +242,30 @@ createApp({
 
   },
 
+  watch: {
+    
+  },
+
+  computed: {
+    // searchString(){
+    //   return this.searchStringInserted;
+    // },
+
+    // myContacts(){
+    //   return this.contacts;
+    // }
+  },
+
 
   mounted() {
     console.log("the component is now mounted.");
-    setTimeout(()=>{
-      console.log("Sono passati 5 secondi")
-    }, 5000);
-    console.log(this.filterArray("Federico"));
+    // setTimeout(()=>{
+    //   console.log("Sono passati 5 secondi")
+    // }, 5000);
+    // console.log(this.filterArray("Federico"));
 
-    console.log("L'ora inserita è: " + this.contacts[0].messages[ this.contacts[0].messages.length -1].date.slice(11, 16));
+    // console.log("L'ora inserita è: " + this.contacts[0].messages[ this.contacts[0].messages.length -1].date.slice(11, 16));
 
-    // this.searchString("a");
     
   },
   
