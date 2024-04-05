@@ -285,6 +285,16 @@ body{
   background-color: white;
 }
 
+.toast.contact_selected{
+  background-color: rgb(246, 246, 246);
+}
+
+
+
+.toast:hover{
+  background-color: rgb(246, 246, 246);
+}
+
 .contact-cards li .toast{
   padding: 15px;
   border-bottom: 1px solid var(--grey-border);

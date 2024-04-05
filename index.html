@@ -54,7 +54,7 @@
             @click="changeActiveElement(i)"
             :class="{d_none : contact.visible !== true}"
             >
-              <div class="toast">
+              <div :class="{contact_selected : i === activeElement}" class="toast">
                 <img class="card-img" :src="contact.avatar" alt="">
                 <div class="card-text">
                   <h3 class="card-name">{{contact.name}}</h3>
